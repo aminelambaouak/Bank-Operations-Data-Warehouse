@@ -1,5 +1,7 @@
 # 🏦 Bank Operations Data Warehouse
 
+![image](https://github.com/user-attachments/assets/c05322fb-534a-429f-aacf-4f5ebfd305fc)
+
 ## Overview  
 This data warehouse consolidates and transforms raw data from **CRM** and **ERP systems** (via CSV files) into structured, analytics-ready datasets. Built using **Python (Pandas)** for data processing and **SQLAlchemy** with **MySQL** for storage, it follows a layered architecture (Bronze, Silver, Gold) to ensure reliability and scalability.
 
