@@ -22,10 +22,9 @@ This data warehouse consolidates and transforms raw data from **CRM** and **ERP 
 
 ## Architecture Layers  
 ### 1. **Bronze Layer (Raw Data)**  
-- **Purpose**: Ingestion of raw CSV files into MySQL.  
+- **Purpose**: Ingestion of raw CSV files into Python with **Pandas**.  
 - **Tools**:  
-  - **Pandas**: Reads CSV files and performs initial schema validation.  
-  - **SQLAlchemy**: Loads raw data into MySQL tables using `to_sql` with `Truncate & Insert` strategy.  
+  - **Pandas**: Reads CSV files and performs initial schema validation.   
 - **Object Type**: Raw tables stored "as-is" (e.g., `raw_crm_customers`, `raw_erp_transactions`).  
 
 ### 2. **Silver Layer (Cleaned & Standardized Data)**  
