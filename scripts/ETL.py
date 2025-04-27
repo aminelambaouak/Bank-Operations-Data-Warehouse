@@ -1,4 +1,5 @@
 import pandas as pd
+import mysql.connector
 
 # extraction of data from the CSV file
 def extract_data(file_path):
