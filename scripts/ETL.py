@@ -5,8 +5,6 @@ def extract_data(file_path):
     df = pd.read_csv(file_path, encoding="utf-8")
     return df.head()
 
-df1 = extract_data("C:\\Users\\amine\\Downloads\\Accounts.csv")
-df2 = extract_data("C:\\Users\\amine\\Downloads\\The_operations (5).csv")
 
 # transforming and cleaning data 
 def parse_time(time_string):
@@ -41,6 +39,5 @@ def transform_data(df):
             df[item] = df[item].astype('string')
 
     return df.head()
-print(df1.head())
 
-# connect my script to Mysql database
+
