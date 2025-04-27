@@ -73,6 +73,8 @@ This data warehouse consolidates and transforms raw data from **CRM** and **ERP 
 - **Auditability**: Full traceability from raw CSV files to final metrics.  
 - **Flexibility**: Pandas enables rapid iteration on transformation logic.  
 
+![alt text](<Project workspace -1.png>)
+
 --- 
 
 📊 **Note**: This design prioritizes simplicity and maintainability, leveraging Python’s Pandas and SQLAlchemy for end-to-end pipeline control.  
