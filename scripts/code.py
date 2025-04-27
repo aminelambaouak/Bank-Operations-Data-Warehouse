@@ -26,22 +26,16 @@ def transform_data(df):
     # Convert 'operation_date' to datetime if it exists
     if 'operation_date' in df.columns:
         df['operation_date'] = pd.to_datetime(df['operation_date'])
-    
-    # Operations columns as strings
-    operations_string_list = ['operation_id', 'transaction_type', 'currency', 'channel']
-    for operation in operations_string_list:
-        if operation in df.columns:
-            df[operation] = df[operation].astype('string')
-    
+
     # Convert 'account_open_date' and 'birth_date' to datetime if they exist in df1
-    if 'account_open_date' in df.columns or 'birth_date' in df.columns:
-        list_date = ['account_open_date', 'birth_date']
-        for item in list_date:
-            if item in df.columns:
-                df[item] = pd.to_datetime(df[item])
+    list_date = ['account_open_date', 'birth_date']
+    for item in list_date:
+        if item in df.columns:
+            df[item] = pd.to_datetime(df[item])
     
     # Convert specified columns to string
-    list_string = ['first_name', 'last_name', 'gender', 'email', 'phone_number', 'address', 'city', 'country', 'account_type', 'account_number']
+    list_string = ['first_name', 'last_name', 'gender', 'email', 'phone_number', 'address', 'city', 
+                   'country', 'account_type', 'account_number', 'operation_id', 'transaction_type', 'currency', 'channel']
     for item in list_string:
         if item in df.columns:
             df[item] = df[item].astype('string')
@@ -49,10 +43,9 @@ def transform_data(df):
     return df.head()
 
 # Transform the data for both dataframes
-df1 = transform_data(df1)
-print(df1)
-print(df1.dtypes)
-
-df2 = transform_data(df2)
-print(df2)
-print(df2.dtypes)
+#df1 = transform_data(df1)
+#print(df1)
+#print(df1.dtypes)
+#df2 = transform_data(df2)
+#print(df2)
+#print(df2.dtypes)
