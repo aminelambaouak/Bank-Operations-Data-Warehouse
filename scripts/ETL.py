@@ -55,7 +55,7 @@ df_operations_transformed = transform_data(df_operations)
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
-    passwd="*****",
+    passwd="**",
     database = 'Bankdwproject'
 
 )

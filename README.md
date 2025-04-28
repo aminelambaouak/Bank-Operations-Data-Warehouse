@@ -55,17 +55,9 @@ Setting up the foundation for more complex ETL workflows and real-time data pipe
 
 Supporting fraud detection, customer segmentation, or financial performance analysis.
 
-Future Steps
-Once the data is successfully loaded into MySQL, Power BI will be used to:
-
-Analyze the banking operations data.
-
-Create dynamic dashboards.
-
-Generate visual reports for business insights and decision-making.
 
 ![alt text](<Project workspace -1.png>)
 
 --- 
 
-📊 **Note**: This design prioritizes simplicity and maintainability, leveraging Python’s Pandas and SQLAlchemy for end-to-end pipeline control.  
+📊 **Note**: This design prioritizes simplicity and maintainability, leveraging Python’s Pandas and mysql-connector for end-to-end pipeline control.  
