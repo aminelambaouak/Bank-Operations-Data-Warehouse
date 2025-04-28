@@ -2,76 +2,72 @@
 
 ![alt text](<Project diagram-1.png>)
 
-## Overview  
-This data warehouse consolidates and transforms raw data from **CRM** and **ERP systems** (via CSV files) into structured, analytics-ready datasets. Built using **Python (Pandas)** for data processing and **SQLAlchemy** with **MySQL** for storage, it follows a layered architecture (Bronze, Silver, Gold) to ensure reliability and scalability.
+Bank Operations Data Warehouse ETL
+Project Overview
+This project is focused on building a basic ETL (Extract, Transform, Load) pipeline for a Bank Operations Data Warehouse.
+It demonstrates how to extract raw banking operations data from a CSV file, perform data cleaning and transformations, and then load the processed data into a MySQL database.
 
----
+The pipeline is designed with a modular, object-oriented approach using Python and popular libraries such as Pandas, SQLAlchemy, and mysql-connector-python.
 
-## Tools & Technologies  
-- **Python**: Core ETL workflows powered by **Pandas** for data cleaning, transformations, and batch processing.  
-- **SQLAlchemy**: Manages database interactions (e.g., MySQL table creation, queries, and transactions).  
-- **MySQL**: Stores raw, cleaned, and aggregated data across all layers.  
+Main Features
+Extraction:
+Reads banking customer and transaction data from CSV files with handling of common file inconsistencies (e.g., malformed rows, encoding issues).
 
----
+Transformation:
+Cleans and standardizes the data, including:
 
-## Data Sources  
-- **CRM Data**: Customer profiles, interactions, and sales pipelines (CSV files).  
-- **ERP Data**: Financial transactions, inventory logs, and operational metrics (CSV files).  
+Parsing and formatting operation times and dates.
 
----
+Standardizing text fields.
 
-## Architecture Layers  
-### 1. **Bronze Layer (Raw Data)**  
-- **Purpose**: Ingestion of raw CSV files into Python with **Pandas**.  
-- **Tools**:  
-  - **Pandas**: Reads CSV files and performs initial schema validation.   
-- **Object Type**: Raw tables stored "as-is" (e.g., `raw_crm_customers`, `raw_erp_transactions`).  
+Ensuring proper data types for all fields (dates, strings, etc.).
 
-### 2. **Silver Layer (Cleaned & Standardized Data)**  
-- **Purpose**: Clean, validate, and unify data for consistency.  
-- **Tools**:  
-  - **Pandas**: Handles deduplication, missing value imputation, and standardization (e.g., date formats, currency conversion).  
-  - **SQLAlchemy**: Writes cleaned data to MySQL tables with enforced schemas and constraints.  
-- **Processes**:  
-  - Data enrichment (e.g., deriving `CustomerSegment` from transaction history).  
-  - Normalization (e.g., splitting `Address` into `Street`, `City`, `ZipCode`).  
+Loading:
+Loads the cleaned data into a MySQL database for further use in analytics, reporting, and data warehousing activities.
 
-### 3. **Gold Layer (Business-Ready Data)**  
-- **Purpose**: Deliver aggregated datasets optimized for analytics and reporting.  
-- **Tools**:  
-  - **Pandas**: Computes aggregations (e.g., monthly account balances, sales trends).  
-  - **SQLAlchemy**: Creates MySQL views and tables for business-facing outputs.  
-- **Outputs**:  
-  - Star schema tables (e.g., `fact_sales`, `dim_customers`).  
-  - Flat tables for dashboards (e.g., `customer_360_view`).  
-  - Precomputed metrics (e.g., `TotalLoanPortfolio`, `AverageDepositByRegion`).  
+Project Structure
+etl.py:
+Contains the ETL class with methods for extraction, transformation, and preparation for loading.
 
----
+database_connection.py (optional):
+A helper module for managing the MySQL database connection using SQLAlchemy.
 
-## Key Workflows  
-1. **Data Ingestion**:  
-   - Pandas reads CRM/ERP CSV files, and SQLAlchemy loads them into MySQL Bronze tables.  
-2. **Bronze → Silver**:  
-   - Pandas cleans raw data (e.g., filtering invalid records) and writes to Silver tables via SQLAlchemy.  
-3. **Silver → Gold**:  
-   - Pandas calculates business metrics (e.g., customer lifetime value) and populates Gold-layer MySQL tables.  
-4. **Batch Updates**:  
-   - Scheduled Python scripts refresh data daily/weekly using Pandas and SQLAlchemy.  
+README.md:
+Project description and instructions.
 
----
+requirements.txt:
+List of Python libraries needed for the project (e.g., pandas, SQLAlchemy, mysql-connector-python).
 
-## Outputs  
-- **Gold Layer**:  
-  - MySQL views for BI tools (e.g., Tableau, Power BI).  
-  - Aggregated tables for regulatory compliance (e.g., liquidity reports).  
-  - Enriched datasets for predictive modeling (e.g., churn prediction).  
+Technologies Used
+Python 3.x
 
----
+Pandas for data manipulation
 
-## Benefits  
-- **Cost Efficiency**: Open-source stack (Python + MySQL) avoids vendor lock-in.  
-- **Auditability**: Full traceability from raw CSV files to final metrics.  
-- **Flexibility**: Pandas enables rapid iteration on transformation logic.  
+SQLAlchemy for ORM and database interaction
+
+MySQL as the relational database
+
+MySQL Connector for direct database connection
+
+Power BI for data analysis and visualization
+
+Potential Use Cases
+Centralizing and cleaning customer banking data for operational reporting.
+
+Building dashboards for transaction and customer activity monitoring.
+
+Setting up the foundation for more complex ETL workflows and real-time data pipelines.
+
+Supporting fraud detection, customer segmentation, or financial performance analysis.
+
+Future Steps
+Once the data is successfully loaded into MySQL, Power BI will be used to:
+
+Analyze the banking operations data.
+
+Create dynamic dashboards.
+
+Generate visual reports for business insights and decision-making.
 
 ![alt text](<Project workspace -1.png>)
 
