@@ -55,7 +55,7 @@ df_operations_transformed = transform_data(df_operations)
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
-    passwd="**",
+    passwd="070193",
     database = 'Bankdwproject'
 
 )
@@ -75,8 +75,8 @@ for db in myCursor:
     
 # load data in Mysql
 myCursor.execute("""CREATE TABLE IF NOT EXISTS BankOperations(
-                                                            operation_id VARCHAR(50),
-                                                            client_id INT PRIMARY KEY,
+                                                            operation_id VARCHAR(50) PRIMARY KEY,
+                                                            client_id INT,
                                                             transaction_type VARCHAR(50), 
                                                             amount FLOAT, 
                                                             currency VARCHAR(10),
