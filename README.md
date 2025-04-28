@@ -7,7 +7,7 @@ Project Overview
 This project is focused on building a basic ETL (Extract, Transform, Load) pipeline for a Bank Operations Data Warehouse.
 It demonstrates how to extract raw banking operations data from a CSV file, perform data cleaning and transformations, and then load the processed data into a MySQL database.
 
-The pipeline is designed with a modular, object-oriented approach using Python and popular libraries such as Pandas, SQLAlchemy, and mysql-connector-python.
+The pipeline is designed with a modular, object-oriented approach using Python and popular libraries such as Pandas and mysql-connector-python.
 
 Main Features
 Extraction:
@@ -27,23 +27,18 @@ Loads the cleaned data into a MySQL database for further use in analytics, repor
 
 Project Structure
 etl.py:
-Contains the ETL class with methods for extraction, transformation, and preparation for loading.
-
-database_connection.py (optional):
-A helper module for managing the MySQL database connection using SQLAlchemy.
+Contains the ETL class with methods for extraction, transformation, and loading.
 
 README.md:
 Project description and instructions.
 
 requirements.txt:
-List of Python libraries needed for the project (e.g., pandas, SQLAlchemy, mysql-connector-python).
+List of Python libraries needed for the project (e.g., pandas, mysql-connector-python).
 
 Technologies Used
 Python 3.x
 
 Pandas for data manipulation
-
-SQLAlchemy for ORM and database interaction
 
 MySQL as the relational database
 
